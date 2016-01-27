@@ -1,6 +1,8 @@
 package weapon;
 
 /**
+ * NOT READY!
+ *
  * Number Theory ~
  */
 public class NumberTheory {

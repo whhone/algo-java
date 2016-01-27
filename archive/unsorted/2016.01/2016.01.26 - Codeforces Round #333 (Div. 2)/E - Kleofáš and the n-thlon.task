@@ -1,0 +1,51 @@
+29 E - Kleofáš and the n-thlon
+6 SINGLE
+8 STANDARD
+-1
+8 STANDARD
+-1
+3
+0
+13 4 10
+2
+1
+2
+1
+
+19 1.0000000000000000
+
+1
+1
+14 5 5
+1
+2
+3
+4
+5
+
+19 2.7500000000000000
+
+1
+2
+10 3 6
+2
+4
+2
+
+19 1.6799999999999999
+
+1
+13 src/workspace
+8 -Xmx256M
+4 Main
+15 workspace.TaskE
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2016.01.26
+30 Codeforces Round #333 (Div. 2)
+1
+17 java.util.Scanner
+19 java.io.PrintWriter
+0
+0

@@ -1,0 +1,33 @@
+22 2012 - About Grisha N.
+6 SINGLE
+8 STANDARD
+-1
+8 STANDARD
+-1
+2
+0
+2 7
+
+4 YES
+
+1
+1
+2 5
+
+3 NO
+
+1
+13 src/workspace
+15 -Xmx64M -Xss64M
+4 Main
+18 workspace.Task2012
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2016.01.26
+9 Volume 11
+1
+17 java.util.Scanner
+19 java.io.PrintWriter
+0
+0
