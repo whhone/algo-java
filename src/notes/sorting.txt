@@ -1,1 +1,7 @@
-Arrays.sort()
+Arrays.sort(arr)
+
+Arrays.sort(arr, Comparator)
+
+Arrays.sort(arr, Collections.reverseOrder);
+
+Arrays.sort(arr, Collections.reverseOrder(Comparator));

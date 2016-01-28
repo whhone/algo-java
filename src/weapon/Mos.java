@@ -10,6 +10,7 @@ import java.util.Comparator;
  *
  * Tutorial:
  *  - https://www.hackerearth.com/notes/mos-algorithm/
+ *  - http://blog.anudeep2011.com/mos-algorithm/
  *
  * Sample Problems:
  *  - http://codeforces.com/contest/86/problem/D
@@ -19,7 +20,7 @@ import java.util.Comparator;
  */
 public abstract class Mos {
 
-  protected static Comparator<Query> CmpB = new Comparator<Query>() {
+  final protected static Comparator<Query> CmpB = new Comparator<Query>() {
     public int compare(Query a, Query b) {
       if (a.b != b.b) {
         return a.b - b.b;
@@ -48,9 +49,6 @@ public abstract class Mos {
     this.blockSize = (int) Math.sqrt(sizeOfArray + 0.5);
   }
 
-  // curRight++;
-  // curAns += cnt[sum[curRight] ^ K];
-  // cnt[sum[curRight]]++;
   public abstract void rightRight();
 
   public abstract void rightLeft();

@@ -1,4 +1,4 @@
-package weapon;
+package lab;
 
 /**
  * NOT READY!
