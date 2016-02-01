@@ -21,7 +21,7 @@ public class SegmentTree {
     public Node(int left, int right) {
       this.left = left;
       this.right = right;
-      this.middle = left + (right - left) / 2;
+      this.middle = (int)(left + ((long)right - (long)left) / 2);
       this.leftNode = null;
       this.rightNode = null;
     }
