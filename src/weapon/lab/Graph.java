@@ -1,4 +1,4 @@
-package lab;
+package weapon.lab;
 
 public class Graph {
 

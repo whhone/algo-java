@@ -1,0 +1,29 @@
+20 C - Harmony Analysis
+6 SINGLE
+8 STANDARD
+9 input.txt
+8 STANDARD
+10 output.txt
+1
+0
+2 2
+
+19 ++**
++*+*
+++++
++**+
+1
+13 src/workspace
+8 -Xmx256M
+4 Main
+15 workspace.TaskC
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2016.01.28
+30 Codeforces Round #337 (Div. 2)
+1
+17 utils.InputReader
+18 utils.OutputWriter
+0
+0

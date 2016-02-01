@@ -14,7 +14,7 @@ public class InputReader {
   public StringTokenizer tokenizer;
 
   public InputReader(InputStream stream) {
-    reader = new BufferedReader(new InputStreamReader(stream), 65536);
+    reader = new BufferedReader(new InputStreamReader(stream), 32768);
     tokenizer = null;
   }
 
@@ -50,6 +50,16 @@ public class InputReader {
     int[] a = new int[n];
     for (int i = 0; i < n; ++i) {
       a[i] = nextInt();
+    }
+    return a;
+  }
+
+  public int[][] nextIntArray2D(int n, int m) {
+    int[][] a = new int[n][m];
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < m; j++) {
+        a[i][j] = nextInt();
+      }
     }
     return a;
   }
