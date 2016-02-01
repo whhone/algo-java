@@ -1,4 +1,4 @@
-package tests;
+package tests.geom;
 
 import org.junit.Test;
 import weapon.geom.Line;

@@ -1,4 +1,4 @@
-package tests;
+package tests.geom;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
