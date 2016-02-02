@@ -12,10 +12,28 @@ import java.util.StringTokenizer;
 public class InputReader {
   public BufferedReader reader;
   public StringTokenizer tokenizer;
+  public String cache;
 
   public InputReader(InputStream stream) {
     reader = new BufferedReader(new InputStreamReader(stream), 32768);
     tokenizer = null;
+    cache = null;
+  }
+
+  public boolean hasNext() {
+    if (cache == null) {
+      try {
+        cache = nextNoCache();
+      } catch (NullPointerException e) {}
+    }
+    return cache != null;
+  }
+
+  private String nextNoCache() {
+    while (tokenizer == null || !tokenizer.hasMoreTokens()) {
+      tokenizer = new StringTokenizer(nextLine());
+    }
+    return tokenizer.nextToken();
   }
 
   public String nextLine() {
@@ -27,12 +45,14 @@ public class InputReader {
   }
 
   public String next() {
-    while (tokenizer == null || !tokenizer.hasMoreTokens()) {
-      tokenizer = new StringTokenizer(nextLine());
+    if (cache != null) {
+      String next = cache;
+      cache = null;
+      return next;
+    } else {
+      return nextNoCache();
     }
-    return tokenizer.nextToken();
   }
-
 
   public int nextInt() {
     return Integer.parseInt(next());
