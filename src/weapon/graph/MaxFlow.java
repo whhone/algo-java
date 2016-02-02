@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 
+/**
+ * Dinic's algorithm for max flow. O(V * V * E).
+ */
 public class MaxFlow {
   class Edge {
     public int u, v, cap;
@@ -17,13 +20,13 @@ public class MaxFlow {
   }
 
   int N;
-  public ArrayList<LinkedList<Edge>> edges;
+  public ArrayList<ArrayList<Edge>> edges;
 
   public MaxFlow(int N) {
     this.N = N;
-    this.edges = new ArrayList<LinkedList<Edge>>();
+    this.edges = new ArrayList<ArrayList<Edge>>();
     for (int i = 0; i < this.N; i++) {
-      this.edges.add(new LinkedList<Edge>());
+      this.edges.add(new ArrayList<Edge>());
     }
   }
 
@@ -42,6 +45,7 @@ public class MaxFlow {
 
     dist[starting] = 0;
     LinkedList<Integer> queue = new LinkedList<Integer>();
+
     queue.add(starting);
     while (!queue.isEmpty()) {
       int cur = queue.removeFirst();
@@ -56,7 +60,7 @@ public class MaxFlow {
     return dist;
   }
 
-  private int dfs(int u, int T, int input, int[] dist) {
+  private int push(int u, int T, int input, int[] dist) {
     if (u == T) {
       return input;
     }
@@ -67,7 +71,7 @@ public class MaxFlow {
       }
       int v = edge.v;
       if (edge.cap > 0 && dist[v] == dist[u] + 1) {
-        int t = dfs(v, T, Math.min(input - used, edge.cap), dist);
+        int t = push(v, T, Math.min(input - used, edge.cap), dist);
         if (t > 0) {
           edge.cap -= t;
           edge.reverse.cap += t;
@@ -88,7 +92,7 @@ public class MaxFlow {
       if (dist[T] == -1) {
         break;
       }
-      int tmp = dfs(S, T, Integer.MAX_VALUE, dist);
+      int tmp = push(S, T, Integer.MAX_VALUE, dist);
       flow += tmp;
     }
     return flow;
