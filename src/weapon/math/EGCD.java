@@ -1,7 +1,9 @@
 package weapon.math;
 
 /**
- * Returns an long array {gcd, x, y} so that a * x + b * y = gcd.
+ * Given a and b. Solves a * x + b * y = gcd where gcd > 0.
+ *
+ * Notes that there could be multiple solution for (x, y). EGCD will returns any one of it.
  */
 public class EGCD {
 
@@ -18,7 +20,8 @@ public class EGCD {
 
   private long[] egcd(long a, long b) {
     if (b == 0) {
-      return new long[] {a, 1, 0};
+      long gcd = Math.abs(a);
+      return new long[]{gcd, a / gcd, 0};
     } else {
       long[] ans = egcd(b, a % b);
       ans[1] -= a / b * ans[2];
