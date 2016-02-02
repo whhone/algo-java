@@ -4,6 +4,8 @@ public class GeomUtils {
 
   /**
    * Dot product of OA and OB.. Returns (2 * Area of triangle ABC).
+   *
+   * If OA rotates to OB anti-clockwise, the dot product is positive.
    */
   public static double dotProduct(double ax, double ay, double bx, double by, double ox, double oy) {
     return (ax - ox) * (by - oy) - (ay - oy) * (bx - ox);
