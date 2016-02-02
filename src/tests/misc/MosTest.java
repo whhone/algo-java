@@ -11,8 +11,8 @@ public class MosTest {
 
   @Test
   public void test() {
-    int sizeOfArray = 1000;
-    int numOfQuery = 1000;
+    int sizeOfArray = 50;
+    int numOfQuery = 50;
 
     final int[] a = new int[sizeOfArray];
 

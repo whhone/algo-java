@@ -13,13 +13,13 @@ public class NimTest {
 
   @Test
   public void testMul() {
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 50; i++) {
       assertMul(0, i, 0);
     }
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 50; i++) {
       assertMul(1, i, i);
     }
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 50; i++) {
       assertMul(i, 1, i);
     }
 
