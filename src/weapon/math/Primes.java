@@ -13,7 +13,7 @@ public class Primes {
     for (int i = 2; i <= n; ++i) {
       if (!visited[i]) {
         primes.add((long)i);
-        for (int j = i + i; j <= n; ++j) {
+        for (int j = i + i; j <= n; j += i) {
           visited[j] = true;
         }
       }
