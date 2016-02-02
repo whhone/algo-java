@@ -12,11 +12,6 @@ public class NumberTheory {
     return (a > 0) ? gcd(b % a, a) : b;
   }
 
-  public static long egcd(long a, long b, Integer x, Integer y) {
-    x = x + 10;
-    return 1;
-  }
-
   public static long eulerTotient(long n) {
     long ans = n;
     ArrayList<Long> primes = Primes.getPrimes((int) Math.sqrt(n) + 1);
