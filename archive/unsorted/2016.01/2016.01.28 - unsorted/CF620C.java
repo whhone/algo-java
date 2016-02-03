@@ -1,7 +1,7 @@
 package workspace;
 
 import javafx.util.Pair;
-import utils.InputReader;
+import io.InputReader;
 
 import java.io.InterruptedIOException;
 import java.io.PrintWriter;

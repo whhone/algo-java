@@ -1,6 +1,6 @@
 package workspace;
 
-import utils.InputReader;
+import io.InputReader;
 import java.io.PrintWriter;
 
 public class TaskB {

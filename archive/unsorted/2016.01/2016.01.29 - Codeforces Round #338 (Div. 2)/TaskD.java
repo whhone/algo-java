@@ -1,8 +1,8 @@
 package workspace;
 
 import weapon.datastructures.MultiSet;
-import utils.InputReader;
-import utils.OutputWriter;
+import io.InputReader;
+import io.OutputWriter;
 import weapon.Modular;
 
 public class TaskD {

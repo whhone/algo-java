@@ -1,8 +1,8 @@
 package workspace;
 
 import weapon.lab.ArrayUtils;
-import utils.InputReader;
-import utils.OutputWriter;
+import io.InputReader;
+import io.OutputWriter;
 
 public class TaskB {
   public void solve(int testNumber, InputReader in, OutputWriter out) {
