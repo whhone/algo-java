@@ -2,8 +2,8 @@ package weapon.datastructures;
 
 /**
  * Binary Indexed Tree. Support two kinds of operations,
- *   1) add from value to from point;
- *   2) query the sum of from range;
+ *   1) add from value to a point;
+ *   2) query the sum of a range;
  */
 public class BinaryIndexedTree {
 
