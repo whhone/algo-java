@@ -16,9 +16,9 @@ public class DisjointSet {
     }
   }
 
-  public int find(int u) {
+  public int findSet(int u) {
     if (u != parent[u]) {
-      parent[u] = find(parent[u]);
+      parent[u] = findSet(parent[u]);
       return parent[u];
     } else {
       return u;
@@ -26,9 +26,13 @@ public class DisjointSet {
   }
 
   public void union(int u, int v) {
-    int up = find(u), vp = find(v);
+    int up = findSet(u), vp = findSet(v);
     if (up != vp) {
       parent[u] = parent[v];
     }
+  }
+
+  public boolean isSameSet(int u, int v) {
+    return findSet(u) == findSet(v);
   }
 }
