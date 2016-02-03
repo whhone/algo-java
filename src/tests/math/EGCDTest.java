@@ -10,9 +10,9 @@ public class EGCDTest {
 
   private void assertEgcd(long a, long b, long expectedGCD) {
     EGCD egcd = new EGCD(a, b);
-    assertTrue(egcd.gcd > 0);
-    assertEquals(expectedGCD, egcd.gcd);
-    assertEquals(egcd.gcd, egcd.x * a + egcd.y * b);
+    assertTrue(egcd.getGcd() > 0);
+    assertEquals(expectedGCD, egcd.getGcd());
+    assertEquals(egcd.getGcd(), egcd.getX() * a + egcd.getY() * b);
   }
 
   @Test

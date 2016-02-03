@@ -1,13 +1,13 @@
 package weapon.math;
 
 /**
- * Given a and b. Solves a * x + b * y = gcd where gcd > 0.
+ * Given a and b. Solves a * x + b * y = gcd(a, b) where the gcd is positive.
  *
  * Notes that there could be multiple solution for (x, y). EGCD will returns any one of it.
  */
 public class EGCD {
 
-  final public long a, b, x, y, gcd;
+  final private long a, b, x, y, gcd;
 
   public EGCD(long a, long b) {
     this.a = a;
@@ -16,6 +16,26 @@ public class EGCD {
     this.gcd = ans[0];
     this.x = ans[1];
     this.y = ans[2];
+  }
+
+  public long getA() {
+    return this.a;
+  }
+
+  public long getB() {
+    return this.b;
+  }
+
+  public long getX() {
+    return this.x;
+  }
+
+  public long getY() {
+    return this.y;
+  }
+
+  public long getGcd() {
+    return this.gcd;
   }
 
   private long[] egcd(long a, long b) {

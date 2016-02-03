@@ -5,10 +5,6 @@ import java.util.Set;
 
 /**
  * A MultiSet for T.
- *
- * <code>
- *   MultiSet<Integer> ms = new MultiSet<Integer>();
- * </>
  */
 public class MultiSet<T> {
   HashMap<T, Integer> hm;

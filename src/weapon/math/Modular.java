@@ -3,8 +3,8 @@ package weapon.math;
 
 /**
  * Number Theory's Modular Arithmetic.
- * <from/>
- * Modular.on(MOD).power(from, to);
+ *
+ * Modular.on(MOD).power(a, b);
  */
 public class Modular {
 

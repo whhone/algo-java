@@ -1,7 +1,7 @@
 package weapon.math;
 
 /**
- * Nim. Grundy Number. Sprague–Grundy theorem.
+ * Nim. Grundy Number. Sprague-Grundy theorem.
  */
 public class Nim {
 
@@ -67,6 +67,4 @@ public class Nim {
     }
     return r;
   }
-
-
 }
