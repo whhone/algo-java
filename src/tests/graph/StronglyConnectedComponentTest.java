@@ -17,11 +17,11 @@ public class StronglyConnectedComponentTest {
     scc.solve();
 
     assertEquals(3, scc.getComponentCount());
-    assertEquals(2, scc.getNodeComponent(0));
-    assertEquals(2, scc.getNodeComponent(1));
-    assertEquals(2, scc.getNodeComponent(2));
-    assertEquals(1, scc.getNodeComponent(3));
-    assertEquals(0, scc.getNodeComponent(4));
+    assertEquals(2, scc.getNodeComponentId(0));
+    assertEquals(2, scc.getNodeComponentId(1));
+    assertEquals(2, scc.getNodeComponentId(2));
+    assertEquals(1, scc.getNodeComponentId(3));
+    assertEquals(0, scc.getNodeComponentId(4));
   }
 
   @Test
@@ -35,11 +35,11 @@ public class StronglyConnectedComponentTest {
     scc.solve();
 
     assertEquals(5, scc.getComponentCount());
-    assertEquals(0, scc.getNodeComponent(0));
-    assertEquals(1, scc.getNodeComponent(1));
-    assertEquals(2, scc.getNodeComponent(2));
-    assertEquals(3, scc.getNodeComponent(3));
-    assertEquals(4, scc.getNodeComponent(4));
+    assertEquals(0, scc.getNodeComponentId(0));
+    assertEquals(1, scc.getNodeComponentId(1));
+    assertEquals(2, scc.getNodeComponentId(2));
+    assertEquals(3, scc.getNodeComponentId(3));
+    assertEquals(4, scc.getNodeComponentId(4));
   }
 
   @Test
@@ -54,11 +54,11 @@ public class StronglyConnectedComponentTest {
     scc.solve();
 
     assertEquals(3, scc.getComponentCount());
-    assertEquals(0, scc.getNodeComponent(0));
-    assertEquals(1, scc.getNodeComponent(1));
-    assertEquals(1, scc.getNodeComponent(2));
-    assertEquals(1, scc.getNodeComponent(3));
-    assertEquals(2, scc.getNodeComponent(4));
+    assertEquals(0, scc.getNodeComponentId(0));
+    assertEquals(1, scc.getNodeComponentId(1));
+    assertEquals(1, scc.getNodeComponentId(2));
+    assertEquals(1, scc.getNodeComponentId(3));
+    assertEquals(2, scc.getNodeComponentId(4));
   }
 
   @Test
@@ -75,10 +75,10 @@ public class StronglyConnectedComponentTest {
     scc.solve();
 
     assertEquals(1, scc.getComponentCount());
-    assertEquals(0, scc.getNodeComponent(0));
-    assertEquals(0, scc.getNodeComponent(1));
-    assertEquals(0, scc.getNodeComponent(2));
-    assertEquals(0, scc.getNodeComponent(3));
-    assertEquals(0, scc.getNodeComponent(4));
+    assertEquals(0, scc.getNodeComponentId(0));
+    assertEquals(0, scc.getNodeComponentId(1));
+    assertEquals(0, scc.getNodeComponentId(2));
+    assertEquals(0, scc.getNodeComponentId(3));
+    assertEquals(0, scc.getNodeComponentId(4));
   }
 }
