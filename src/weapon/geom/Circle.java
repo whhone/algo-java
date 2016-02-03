@@ -21,7 +21,7 @@ public class Circle {
     if (object == null) return false;
     if (object.getClass() != this.getClass()) return false;
     Circle that = (Circle)object;
-    return this.center.equals(that.center) && Math.abs(radius - that.radius) < GeomConfig.getEps();
+    return this.center.equals(that.center) && FloatCompare.equals(radius, that.radius);
   }
 
   public Circle(Point center, double radius) {
@@ -58,7 +58,7 @@ public class Circle {
     List<Point> intersections = new ArrayList<Point>();
 
     double d = this.center.distance(that.center);
-    if (this.radius + that.radius < d - GeomConfig.getEps()) {
+    if (FloatCompare.less(this.radius + that.radius, d)) {
       return intersections;
     }
 
@@ -67,7 +67,7 @@ public class Circle {
     Segment seg = new Segment(this.center, that.center);
     Point p2 = seg.scale(a / d).to;
 
-    if (h > GeomConfig.getEps()) {
+    if (FloatCompare.greater(h, 0)) {
       intersections.add(new Point(
           p2.x + (that.center.y - this.center.y) * h / d,
           p2.y - (that.center.x - this.center.x) * h / d));
@@ -84,14 +84,13 @@ public class Circle {
     List<Point> intersections = new ArrayList<Point>();
 
     double d = center.distance(line);
-    if (Math.abs(radius - d) < GeomConfig.getEps()) {
+    if (FloatCompare.equals(radius, d)) {
       // touching. one intersection.
       Line toD = new Line(center, 1 / line.getSlope());
       intersections.add(line.intersect(toD));
-    } else if (d < radius - GeomConfig.getEps()) {
+    } else if (FloatCompare.less(d, radius)) {
       // two intersections
-
-      if (Math.abs(d) < GeomConfig.getEps()) {
+      if (FloatCompare.equals(0, d)) {
         double degree = Math.atan(line.getSlope());
         intersections.add(new Point(
             this.center.x + this.radius * Math.cos(degree),

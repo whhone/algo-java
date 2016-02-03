@@ -16,7 +16,7 @@ public class Point {
     if (object == null) return false;
     if (object.getClass() != this.getClass()) return false;
     Point that = (Point)object;
-    return Math.abs(this.x - that.x) < GeomConfig.getEps() && Math.abs(this.y - that.y) < GeomConfig.getEps();
+    return FloatCompare.equals(this.x, that.x) && FloatCompare.equals(this.y, that.y);
   }
 
   public Point(double x, double y) {
@@ -71,7 +71,7 @@ public class Point {
   public double distance(Segment segment) {
     double c = segment.length();
     double a = distance(segment.from);
-    if (c < GeomConfig.getEps()) {
+    if (FloatCompare.equals(c, 0)) {
       return a;
     }
     double b = distance(segment.to);

@@ -40,15 +40,15 @@ public class Line {
     if (object == null) return false;
     if (object.getClass() != this.getClass()) return false;
     Line that = (Line)object;
-    return (Math.abs(this.c - that.c) < GeomConfig.getEps() &&
-            Math.abs(this.getSlope() - that.getSlope()) < GeomConfig.getEps());
+    return (FloatCompare.equals(this.c, that.c) &&
+            FloatCompare.equals(this.getSlope(), that.getSlope()));
   }
 
   /**
    * @return The slope of the line. Returns Double.POSITIVE_INFINITY for vertical line.
    */
   public double getSlope() {
-    if (Math.abs(b) < GeomConfig.getEps()) {
+    if (FloatCompare.equals(b, 0)) {
       return Double.POSITIVE_INFINITY;
     } else {
       return - a / b;
@@ -63,7 +63,7 @@ public class Line {
     if (this.getSlope() == Double.POSITIVE_INFINITY) {
       return that.getSlope() == Double.POSITIVE_INFINITY;
     } else {
-      return Math.abs(this.getSlope() - that.getSlope()) < GeomConfig.getEps();
+      return FloatCompare.equals(this.getSlope(), that.getSlope());
     }
   }
 

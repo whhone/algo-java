@@ -22,7 +22,7 @@ public class GeomUtils {
    * Whether three points are collinear.
    */
   public static boolean isCollinear(Point a, Point b, Point c) {
-    return Math.abs(dotProduct(a, b, c)) < GeomConfig.getEps();
+    return FloatCompare.equals(0, dotProduct(a, b, c));
   }
 
   public static double cosineLawGetDegree(double a, double b, double c) {
@@ -33,7 +33,7 @@ public class GeomUtils {
 //   * Whether from point lies on from line.
 //   */
 //  public static boolean isPointOnLine(Point from, Line line) {
-//    return Math.abs(dotProduct(from.x, from.y, line.x1, line.y1, line.x2, line.y2)) < GeomConfig.getEps();
+//    return Math.abs(dotProduct(from.x, from.y, line.x1, line.y1, line.x2, line.y2)) < FloatCompare.getEps();
 //  }
 //
 //  /**
