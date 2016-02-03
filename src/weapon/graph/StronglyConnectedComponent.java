@@ -43,7 +43,7 @@ public class StronglyConnectedComponent {
     return componentCount;
   }
 
-  public int getNodeComponent(int u) {
+  public int getNodeComponentId(int u) {
     return nodes[u].component;
   }
 
