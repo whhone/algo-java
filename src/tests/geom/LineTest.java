@@ -21,6 +21,10 @@ public class LineTest {
     assertEquals(201.5, line2.distance(new Point(100, 200)), 1e-8);
 
     assertTrue(line1.isParallel(line2));
+
+    assertEquals(10, line1.move(10, 10).c, 1e-8);
+    assertEquals(10, line1.move(0, 10).c, 1e-8);
+    assertEquals(0, line1.move(10, 0).c, 1e-8);
   }
 
   @Test
@@ -34,6 +38,10 @@ public class LineTest {
     assertEquals(96.5, line2.distance(new Point(100, 200)), 1e-8);
 
     assertTrue(line1.isParallel(line2));
+
+    assertEquals(10, line1.move(10, 10).c, 1e-8);
+    assertEquals(0, line1.move(0, 10).c, 1e-8);
+    assertEquals(10, line1.move(10, 0).c, 1e-8);
   }
 
   @Test
@@ -46,6 +54,10 @@ public class LineTest {
     assertEquals(-1, line2.getSlope(), 1e-8);
 
     assertTrue(line1.isParallel(line2));
+
+    assertEquals(10 * Math.sqrt(2), line1.move(10, 10).c, 1e-8);
+    assertEquals(10 / Math.sqrt(2), line1.move(0, 10).c, 1e-8);
+    assertEquals(10 / Math.sqrt(2), line1.move(10, 0).c, 1e-8);
   }
 
   @Test

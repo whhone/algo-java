@@ -4,6 +4,8 @@ import com.sun.istack.internal.Nullable;
 
 /**
  * Represents a line (ax + by + c = 0), where a^2 + b^2 = 1 and c >= 0.
+ *
+ * If a is zero, the line is horizontal. If b is zero, the line is vertical.
  */
 public class Line {
 
@@ -53,6 +55,17 @@ public class Line {
     } else {
       return - a / b;
     }
+  }
+
+  /**
+   * Transition of line by dx and dy.
+   *
+   * @param dx The delta of x.
+   * @param dy The delta of y.
+   * @return The result line.
+   */
+  public Line move(double dx, double dy) {
+    return new Line(a, b, c - a * dx - b * dy);
   }
 
   public double distance(Point point) {
