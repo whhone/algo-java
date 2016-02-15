@@ -1,0 +1,26 @@
+7 POJ1840
+6 SINGLE
+8 STANDARD
+9 input.txt
+8 STANDARD
+10 output.txt
+1
+0
+15 37 29 41 43 47
+
+3 654
+1
+13 src/workspace
+16 -Xmx256m -Xss64m
+4 Main
+17 workspace.POJ1840
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2016.02.15
+0 
+1
+14 io.InputReader
+15 io.OutputWriter
+0
+0
