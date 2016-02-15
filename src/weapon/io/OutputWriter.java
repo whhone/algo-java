@@ -1,4 +1,4 @@
-package io;
+package weapon.io;
 
 import java.io.OutputStream;
 import java.io.PrintWriter;

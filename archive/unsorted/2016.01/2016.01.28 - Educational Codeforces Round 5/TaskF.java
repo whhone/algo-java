@@ -1,6 +1,6 @@
 package workspace;
 
-import io.InputReader;
+import weapon.io.InputReader;
 import java.io.PrintWriter;
 
 public class TaskF {

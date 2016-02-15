@@ -1,7 +1,7 @@
 package workspace;
 
-import io.InputReader;
-import io.OutputWriter;
+import weapon.io.InputReader;
+import weapon.io.OutputWriter;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

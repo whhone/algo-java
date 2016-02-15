@@ -1,8 +1,8 @@
 package workspace;
 
 import weapon.datastructures.SegmentTree;
-import io.InputReader;
-import io.OutputWriter;
+import weapon.io.InputReader;
+import weapon.io.OutputWriter;
 
 import java.util.ArrayList;
 import java.util.Collections;

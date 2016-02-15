@@ -1,7 +1,7 @@
 package workspace;
 
-import io.InputReader;
-import io.OutputWriter;
+import weapon.io.InputReader;
+import weapon.io.OutputWriter;
 import weapon.geom.GridPoint;
 
 import java.util.Arrays;

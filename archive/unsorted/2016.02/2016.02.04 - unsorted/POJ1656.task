@@ -27,7 +27,7 @@ TEST 1 1 3
 10 2016.02.04
 0 
 1
-14 io.InputReader
-15 io.OutputWriter
+14 weapon.io.InputReader
+15 weapon.io.OutputWriter
 0
 0

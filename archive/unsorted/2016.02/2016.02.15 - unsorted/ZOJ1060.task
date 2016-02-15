@@ -31,7 +31,7 @@ no
 10 2016.02.15
 0 
 1
-14 io.InputReader
-15 io.OutputWriter
+14 weapon.io.InputReader
+15 weapon.io.OutputWriter
 0
 0

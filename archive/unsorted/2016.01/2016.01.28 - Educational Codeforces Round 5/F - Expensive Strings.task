@@ -34,6 +34,6 @@ ab
 30 Educational Codeforces Round 5
 1
 17 utils.InputReader
-19 java.io.PrintWriter
+19 java.weapon.io.PrintWriter
 0
 0

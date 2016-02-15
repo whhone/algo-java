@@ -1,4 +1,4 @@
-package io;
+package weapon.io;
 
 import java.io.BufferedReader;
 import java.io.IOException;

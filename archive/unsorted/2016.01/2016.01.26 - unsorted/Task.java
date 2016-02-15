@@ -1,6 +1,6 @@
 package workspace;
 
-import io.InputReader;
+import weapon.io.InputReader;
 import weapon.Mos;
 
 import java.io.*;
