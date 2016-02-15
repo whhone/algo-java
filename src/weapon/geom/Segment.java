@@ -18,10 +18,6 @@ public class Segment {
     this.to = to;
   }
 
-//  public Segment(Point from, double slope, double length) {
-//
-//  }
-
   public double length() {
     return from.distance(to);
   }
