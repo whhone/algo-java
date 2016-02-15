@@ -51,7 +51,13 @@ public class MultiSet<T> {
   }
 
   public int count(T object) {
-    return hm.getOrDefault(object, 0);
+    if (hm.containsKey(object)) {
+      return hm.get(object);
+    } else {
+      return 0;
+    }
+    // getOrDefault() is available since Java 8.
+    // return hm.getOrDefault(object, 0);
   }
 
   public int size() {
