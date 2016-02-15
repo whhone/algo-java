@@ -1,0 +1,37 @@
+7 ZOJ1060
+6 SINGLE
+8 STANDARD
+9 input.txt
+8 STANDARD
+10 output.txt
+1
+0
+12 0
+1
+2
+3
+4
+5
+
+19 no
+no
+yes
+no
+no
+no
+
+1
+13 src/workspace
+16 -Xmx256m -Xss64m
+4 Main
+17 workspace.ZOJ1060
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2016.02.15
+0 
+1
+14 io.InputReader
+15 io.OutputWriter
+0
+0
