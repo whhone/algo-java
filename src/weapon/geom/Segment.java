@@ -82,7 +82,7 @@ public class Segment {
   }
 
   /**
-   * Checks if the value in the range between bound1 and bould2.
+   * Checks if the value in the range between bound1 and bound2.
    */
   private boolean within(double value, double bound1, double bound2) {
     if (bound1 > bound2) {
