@@ -20,8 +20,8 @@ public class BipartiteMatchingTest {
 
     assertEquals(3, matching.ansCount);
     for (int i = 1; i <= 3; i++) {
-      assertEquals(i, matching.ansN[i]);
-      assertEquals(i, matching.ansM[i]);
+      assertEquals(i, matching.ansLeft[i]);
+      assertEquals(i, matching.ansRight[i]);
     }
   }
 

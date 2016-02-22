@@ -4,34 +4,44 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 
+/**
+ * Solves bipartite matching.
+ */
 public class BipartiteMatching {
 
-  public int N, M;
+  public int left;
+  public int right;
   public int ansCount = -1;
-  public int[] ansN, ansM;
+  public int[] ansLeft, ansRight;
   public ArrayList<LinkedList<Integer>> edges;
 
-  public BipartiteMatching(int N, int M) {
-    this.N = N;
-    this.M = M;
-    this.ansN = new int[N];
-    Arrays.fill(ansN, -1);
-    this.ansM = new int[M];
-    Arrays.fill(ansM, -1);
+  public BipartiteMatching(int leftN, int rightN) {
+    this.left = leftN;
+    this.right = rightN;
+    this.ansLeft = new int[leftN];
+    Arrays.fill(ansLeft, -1);
+    this.ansRight = new int[rightN];
+    Arrays.fill(ansRight, -1);
     this.edges = new ArrayList<LinkedList<Integer>>();
-    for (int i = 0; i < this.N; i++) {
+    for (int i = 0; i < this.left; i++) {
       this.edges.add(new LinkedList<Integer>());
     }
   }
 
-  public void connect(int n, int m) {
-    this.edges.get(n).add(m);
+  /**
+   * Adds an edge between a left node and a right node.
+   *
+   * @param left The index of the left node.
+   * @param right The index of the right node.
+   */
+  public void connect(int left, int right) {
+    this.edges.get(left).add(right);
   }
 
   public void solve() {
-    boolean[] visited = new boolean[N];
+    boolean[] visited = new boolean[left];
     ansCount = 0;
-    for (int i = 0; i < N; ++i) {
+    for (int i = 0; i < left; ++i) {
       Arrays.fill(visited, false);
       if (find(i, visited)) {
         ++ansCount;
@@ -43,9 +53,9 @@ public class BipartiteMatching {
     for (int v: edges.get(u)) {
       if (!visited[v]) {
         visited[v] = true;
-        if ((ansM[v] == -1) || (find(ansM[v], visited))) {
-          ansM[v] = u;
-          ansN[u] = v;
+        if ((ansRight[v] == -1) || (find(ansRight[v], visited))) {
+          ansRight[v] = u;
+          ansLeft[u] = v;
           return true;
         }
       }
