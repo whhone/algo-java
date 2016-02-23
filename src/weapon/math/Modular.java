@@ -19,7 +19,7 @@ public class Modular {
   }
 
   /**
-   * from ^ to
+   * Returns a ^ b % MOD.
    */
   public long power(long a, long b) {
     if (b == 0) {
@@ -34,12 +34,15 @@ public class Modular {
   }
 
   /**
-   * from ^ -1
+   * Returns the inverse of a such that inverse * a % MOD = 1.
    */
   public long inverse(long a) {
     return power(a, NumberTheory.eulerTotient(MOD) - 1);
   }
 
+  /**
+   * Returns the inverse of a such that inverse * a % MOD = 1. MOD is required to be a prime.
+   */
   public long inverseModPrime(long a) {
     return power(a, MOD - 2);
   }
