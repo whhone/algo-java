@@ -1,0 +1,32 @@
+15 B - Moore's Law
+6 SINGLE
+8 STANDARD
+9 input.txt
+8 STANDARD
+10 output.txt
+2
+0
+13 1000 1000000
+
+36 1011.060722383550382782399454922040
+
+1
+1
+16 1000 2000000000
+
+0 
+1
+13 src/workspace
+7 -Xmx64M
+4 Main
+15 workspace.TaskB
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2016.02.23
+53 Experimental Educational Round: VolBIT Formulas Blitz
+1
+21 weapon.io.InputReader
+22 weapon.io.OutputWriter
+0
+0
