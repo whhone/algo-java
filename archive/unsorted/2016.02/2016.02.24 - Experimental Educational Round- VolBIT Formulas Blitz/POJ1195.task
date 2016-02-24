@@ -1,0 +1,34 @@
+7 POJ1195
+6 SINGLE
+8 STANDARD
+9 input.txt
+8 STANDARD
+10 output.txt
+1
+0
+53 0 4
+1 1 2 3
+2 0 0 2 2 
+1 1 1 2
+1 1 2 -1
+2 1 1 2 3 
+3
+
+4 3
+4
+
+1
+13 src/workspace
+7 -Xmx64M
+4 Main
+17 workspace.POJ1195
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2016.02.24
+53 Experimental Educational Round: VolBIT Formulas Blitz
+1
+21 weapon.io.InputReader
+22 weapon.io.OutputWriter
+0
+0
