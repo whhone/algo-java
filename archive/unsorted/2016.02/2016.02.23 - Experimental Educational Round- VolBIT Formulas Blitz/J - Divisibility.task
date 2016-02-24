@@ -1,0 +1,26 @@
+16 J - Divisibility
+6 SINGLE
+8 STANDARD
+9 input.txt
+8 STANDARD
+10 output.txt
+1
+0
+5 3000
+
+1 1
+1
+13 src/workspace
+7 -Xmx64M
+4 Main
+15 workspace.TaskJ
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2016.02.23
+53 Experimental Educational Round: VolBIT Formulas Blitz
+1
+21 weapon.io.InputReader
+22 weapon.io.OutputWriter
+0
+0
