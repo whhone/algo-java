@@ -10,18 +10,18 @@ import java.util.Collections;
  */
 public class CatalanNumber {
 
-  private static ArrayList<BigInteger> cached =
+  private static ArrayList<BigInteger> cache =
       new ArrayList<BigInteger>(Collections.singletonList(BigInteger.ONE));
 
   public static BigInteger get(int k) {
-    if (k < cached.size() - 1) {
-      return cached.get(k);
+    if (k < cache.size() - 1) {
+      return cache.get(k);
     }
-    for (int i = cached.size(); i <= k; i++) {
-      cached.add(cached.get(i - 1)
+    for (int i = cache.size(); i <= k; i++) {
+      cache.add(cache.get(i - 1)
           .multiply(BigInteger.valueOf(4 * (i + 1) - 6))
           .divide(BigInteger.valueOf(i + 1)));
     }
-    return cached.get(k);
+    return cache.get(k);
   }
 }
