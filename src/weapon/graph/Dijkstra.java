@@ -1,5 +1,7 @@
 package weapon.graph;
 
+import weapon.graph.common.WeightedEdge;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -12,16 +14,11 @@ import java.util.PriorityQueue;
  */
 public class Dijkstra {
 
-  public static class Edge {
-    public final int from;
-    public final int to;
-    public int cost;
+  public static class DijkstraEdge extends WeightedEdge {
     public int capacity;
 
-    public Edge(int from, int to, int cost, int capacity) {
-      this.from = from;
-      this.to = to;
-      this.cost = cost;
+    public DijkstraEdge(int from, int to, int cost, int capacity) {
+      super(from, to, cost);
       this.capacity = capacity;
     }
   }
@@ -30,29 +27,29 @@ public class Dijkstra {
   public final static int INF_DIST = Integer.MAX_VALUE;
 
   private final int N;
-  private ArrayList<ArrayList<Edge>> edges;
+  private ArrayList<ArrayList<DijkstraEdge>> edges;
   private int[] cost;
   private int[] volume;
-  private Edge[] fromEdges;
+  private DijkstraEdge[] fromEdges;
 
   public Dijkstra(int N) {
     this.N = N;
 
-    this.edges = new ArrayList<ArrayList<Edge>>(N);
+    this.edges = new ArrayList<ArrayList<DijkstraEdge>>(N);
     for (int i = 0; i < this.N; i++) {
-      this.edges.add(new ArrayList<Edge>());
+      this.edges.add(new ArrayList<DijkstraEdge>());
     }
     cost = new int[N];
     volume = new int[N];
-    fromEdges = new Edge[N];
+    fromEdges = new DijkstraEdge[N];
   }
 
-  public void addEdge(Edge edge) {
+  public void addEdge(DijkstraEdge edge) {
     this.edges.get(edge.from).add(edge);
   }
 
   public void addEdge(int from, int to, int cost) {
-    addEdge(new Edge(from, to, cost, 1));
+    addEdge(new DijkstraEdge(from, to, cost, 1));
   }
 
   public void solve(int source) {
@@ -70,9 +67,9 @@ public class Dijkstra {
       if (node.dist != cost[node.u]) {
         continue;
       }
-      for (Edge edge : edges.get(node.u)) {
+      for (DijkstraEdge edge : edges.get(node.u)) {
         if (edge.capacity > 0) {
-          int tmp = cost[node.u] + edge.cost;
+          int tmp = cost[node.u] + edge.weight;
           if (tmp < cost[edge.to]) {
             cost[edge.to] = tmp;
             fromEdges[edge.to] = edge;
@@ -101,7 +98,7 @@ public class Dijkstra {
   /**
    * Gets the previous edge in the shortest path.
    */
-  public Edge getFromEdge(int node) {
+  public DijkstraEdge getFromEdge(int node) {
     return this.fromEdges[node];
   }
 

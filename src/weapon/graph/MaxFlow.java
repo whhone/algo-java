@@ -1,5 +1,7 @@
 package weapon.graph;
 
+import weapon.graph.common.Edge;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -8,31 +10,30 @@ import java.util.LinkedList;
  * Dinic's algorithm for max flow. O(V * V * E).
  */
 public class MaxFlow {
-  class Edge {
-    public int u, v, cap;
-    public Edge reverse;
+  class MaxFlowEdge extends Edge {
+    public int cap;
+    public MaxFlowEdge reverse;
 
-    public Edge(int u, int v, int cap) {
-      this.u = u;
-      this.v = v;
+    public MaxFlowEdge(int from, int to, int cap) {
+      super(from, to);
       this.cap = cap;
     }
   }
 
   int N;
-  public ArrayList<ArrayList<Edge>> edges;
+  public ArrayList<ArrayList<MaxFlowEdge>> edges;
 
   public MaxFlow(int N) {
     this.N = N;
-    this.edges = new ArrayList<ArrayList<Edge>>(N);
+    this.edges = new ArrayList<ArrayList<MaxFlowEdge>>(N);
     for (int i = 0; i < this.N; i++) {
-      this.edges.add(new ArrayList<Edge>());
+      this.edges.add(new ArrayList<MaxFlowEdge>());
     }
   }
 
   public void addEdge(int from, int to, int cap) {
-    Edge ef = new Edge(from, to, cap);
-    Edge et = new Edge(to, from, 0);
+    MaxFlowEdge ef = new MaxFlowEdge(from, to, cap);
+    MaxFlowEdge et = new MaxFlowEdge(to, from, 0);
     ef.reverse = et;
     et.reverse = ef;
     this.edges.get(from).add(ef);
@@ -49,10 +50,10 @@ public class MaxFlow {
     queue.add(starting);
     while (!queue.isEmpty()) {
       int cur = queue.removeFirst();
-      for (Edge edge : edges.get(cur)) {
-        if (edge.cap > 0 && dist[edge.v] == -1) {
-          dist[edge.v] = dist[cur] + 1;
-          queue.add(edge.v);
+      for (MaxFlowEdge edge : edges.get(cur)) {
+        if (edge.cap > 0 && dist[edge.to] == -1) {
+          dist[edge.to] = dist[cur] + 1;
+          queue.add(edge.to);
         }
       }
     }
@@ -65,11 +66,11 @@ public class MaxFlow {
       return input;
     }
     int used = 0;
-    for (Edge edge : edges.get(u)) {
+    for (MaxFlowEdge edge : edges.get(u)) {
       if (input - used <= 0) {
         break;
       }
-      int v = edge.v;
+      int v = edge.to;
       if (edge.cap > 0 && dist[v] == dist[u] + 1) {
         int t = push(v, T, Math.min(input - used, edge.cap), dist);
         if (t > 0) {

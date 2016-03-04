@@ -5,7 +5,7 @@ package weapon.graph;
  */
 public class MinCostFlow {
 
-  class Edge extends Dijkstra.Edge {
+  class Edge extends Dijkstra.DijkstraEdge {
     Edge reverse;
 
     Edge(int from, int to, int cost, int capacity) {
