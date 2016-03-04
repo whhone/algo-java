@@ -1,6 +1,6 @@
 package weapon.graph.common;
 
-public class WeightedEdge extends Edge {
+public class WeightedEdge extends Edge implements Comparable<WeightedEdge>  {
 
   private final int weight;
 
@@ -11,5 +11,10 @@ public class WeightedEdge extends Edge {
 
   public int getWeight() {
     return this.weight;
+  }
+
+  @Override
+  public int compareTo(WeightedEdge o) {
+    return this.weight - o.weight;
   }
 }

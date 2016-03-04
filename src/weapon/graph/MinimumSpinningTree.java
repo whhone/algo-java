@@ -1,6 +1,7 @@
 package weapon.graph;
 
 import weapon.datastructures.DisjointSet;
+import weapon.graph.common.WeightedEdge;
 
 import java.util.ArrayList;
 import java.util.PriorityQueue;
@@ -10,48 +11,33 @@ import java.util.PriorityQueue;
  */
 public class MinimumSpinningTree {
 
-  public class Edge implements Comparable<Edge> {
-    public final int u, v, cost;
-
-    Edge(int u, int v, int cost) {
-      this.u = u;
-      this.v = v;
-      this.cost = cost;
-    }
-
-    @Override
-    public int compareTo(Edge o) {
-      return this.cost - o.cost;
-    }
-  }
-
   public int N;
   public int minCost;
-  ArrayList<Edge> edges;
-  ArrayList<Edge> treeEdges;
+  ArrayList<WeightedEdge> edges;
+  ArrayList<WeightedEdge> treeEdges;
 
   public MinimumSpinningTree(int N) {
     this.N = N;
     this.minCost = 0;
-    this.edges = new ArrayList<Edge>(N - 1);
-    this.treeEdges = new ArrayList<Edge>(N - 1);
+    this.edges = new ArrayList<WeightedEdge>(N - 1);
+    this.treeEdges = new ArrayList<WeightedEdge>(N - 1);
   }
 
   public void addEdge(int u, int v, int cost) {
-    this.edges.add(new Edge(u, v, cost));
+    this.edges.add(new WeightedEdge(u, v, cost));
   }
 
   public void solve() {
     DisjointSet ds = new DisjointSet(N);
 
     minCost = 0;
-    PriorityQueue<Edge> pq = new PriorityQueue<Edge>(edges);
+    PriorityQueue<WeightedEdge> pq = new PriorityQueue<WeightedEdge>(edges);
     while (treeEdges.size() < N - 1 && !pq.isEmpty()) {
-      Edge e = pq.poll();
-      if (!ds.isSameSet(e.u, e.v)) {
+      WeightedEdge e = pq.poll();
+      if (!ds.isSameSet(e.getFrom(), e.getTo())) {
         treeEdges.add(e);
-        ds.union(e.u, e.v);
-        minCost += e.cost;
+        ds.union(e.getFrom(), e.getTo());
+        minCost += e.getWeight();
       }
     }
   }
@@ -64,7 +50,7 @@ public class MinimumSpinningTree {
     return this.minCost;
   }
 
-  public ArrayList<Edge> getTreeEdges() {
+  public ArrayList<WeightedEdge> getTreeEdges() {
     return this.treeEdges;
   }
 }

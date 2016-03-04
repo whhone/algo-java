@@ -23,10 +23,10 @@ public class MinimumSpinningTreeTest {
 
     assertTrue(mst.getOK());
     assertEquals(14, mst.getMinCost());
-    assertEquals(2, mst.getTreeEdges().get(0).cost);
-    assertEquals(3, mst.getTreeEdges().get(1).cost);
-    assertEquals(4, mst.getTreeEdges().get(2).cost);
-    assertEquals(5, mst.getTreeEdges().get(3).cost);
+    assertEquals(2, mst.getTreeEdges().get(0).getWeight());
+    assertEquals(3, mst.getTreeEdges().get(1).getWeight());
+    assertEquals(4, mst.getTreeEdges().get(2).getWeight());
+    assertEquals(5, mst.getTreeEdges().get(3).getWeight());
   }
 
   @Test
