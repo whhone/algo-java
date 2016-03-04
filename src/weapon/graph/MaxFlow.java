@@ -51,9 +51,9 @@ public class MaxFlow {
     while (!queue.isEmpty()) {
       int cur = queue.removeFirst();
       for (MaxFlowEdge edge : edges.get(cur)) {
-        if (edge.cap > 0 && dist[edge.to] == -1) {
-          dist[edge.to] = dist[cur] + 1;
-          queue.add(edge.to);
+        if (edge.cap > 0 && dist[edge.getTo()] == -1) {
+          dist[edge.getTo()] = dist[cur] + 1;
+          queue.add(edge.getTo());
         }
       }
     }
@@ -70,7 +70,7 @@ public class MaxFlow {
       if (input - used <= 0) {
         break;
       }
-      int v = edge.to;
+      int v = edge.getTo();
       if (edge.cap > 0 && dist[v] == dist[u] + 1) {
         int t = push(v, T, Math.min(input - used, edge.cap), dist);
         if (t > 0) {

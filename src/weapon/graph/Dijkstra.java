@@ -45,7 +45,7 @@ public class Dijkstra {
   }
 
   public void addEdge(DijkstraEdge edge) {
-    this.edges.get(edge.from).add(edge);
+    this.edges.get(edge.getFrom()).add(edge);
   }
 
   public void addEdge(int from, int to, int cost) {
@@ -69,12 +69,12 @@ public class Dijkstra {
       }
       for (DijkstraEdge edge : edges.get(node.u)) {
         if (edge.capacity > 0) {
-          int tmp = cost[node.u] + edge.weight;
-          if (tmp < cost[edge.to]) {
-            cost[edge.to] = tmp;
-            fromEdges[edge.to] = edge;
-            volume[edge.to] = Math.min(volume[node.u], edge.capacity);
-            pq.add(new Node(edge.to, tmp));
+          int tmp = cost[node.u] + edge.getWeight();
+          if (tmp < cost[edge.getTo()]) {
+            cost[edge.getTo()] = tmp;
+            fromEdges[edge.getTo()] = edge;
+            volume[edge.getTo()] = Math.min(volume[node.u], edge.capacity);
+            pq.add(new Node(edge.getTo(), tmp));
           }
         }
       }

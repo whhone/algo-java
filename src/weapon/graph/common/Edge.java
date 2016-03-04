@@ -2,11 +2,19 @@ package weapon.graph.common;
 
 public class Edge {
 
-  public final int from;
-  public final int to;
+  private final int from;
+  private final int to;
 
   public Edge(int from, int to) {
     this.from = from;
     this.to = to;
+  }
+
+  public int getFrom() {
+    return this.from;
+  }
+
+  public int getTo() {
+    return this.to;
   }
 }

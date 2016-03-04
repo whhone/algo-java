@@ -44,7 +44,7 @@ public class MinCostFlow {
           Edge reverseEdge = edge.reverse;
           edge.capacity -= volume;
           reverseEdge.capacity += volume;
-          u = edge.from;
+          u = edge.getFrom();
         }
       } else {
         break;

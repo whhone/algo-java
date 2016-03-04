@@ -25,10 +25,10 @@ public class DijkstraTest {
     assertEquals(Dijkstra.INF_DIST, dijk.getCost(5));
 
     assertEquals(null, dijk.getFromEdge(0));
-    assertEquals(0, dijk.getFromEdge(1).from);
-    assertEquals(0, dijk.getFromEdge(2).from);
-    assertEquals(0, dijk.getFromEdge(3).from);
-    assertEquals(0, dijk.getFromEdge(4).from);
+    assertEquals(0, dijk.getFromEdge(1).getFrom());
+    assertEquals(0, dijk.getFromEdge(2).getFrom());
+    assertEquals(0, dijk.getFromEdge(3).getFrom());
+    assertEquals(0, dijk.getFromEdge(4).getFrom());
     assertEquals(null, dijk.getFromEdge(5));
 
     dijk.addEdge(1, 3, 4);
@@ -44,10 +44,10 @@ public class DijkstraTest {
     assertEquals(Dijkstra.INF_DIST, dijk.getCost(5));
 
     assertEquals(null, dijk.getFromEdge(0));
-    assertEquals(0, dijk.getFromEdge(1).from);
-    assertEquals(0, dijk.getFromEdge(2).from);
-    assertEquals(1, dijk.getFromEdge(3).from);
-    assertEquals(3, dijk.getFromEdge(4).from);
+    assertEquals(0, dijk.getFromEdge(1).getFrom());
+    assertEquals(0, dijk.getFromEdge(2).getFrom());
+    assertEquals(1, dijk.getFromEdge(3).getFrom());
+    assertEquals(3, dijk.getFromEdge(4).getFrom());
     assertEquals(null, dijk.getFromEdge(5));
   }
 
@@ -69,9 +69,9 @@ public class DijkstraTest {
     assertEquals(10, dijk.getCost(4));
 
     assertEquals(null, dijk.getFromEdge(0));
-    assertEquals(0, dijk.getFromEdge(1).from);
-    assertEquals(1, dijk.getFromEdge(2).from);
-    assertEquals(2, dijk.getFromEdge(3).from);
-    assertEquals(3, dijk.getFromEdge(4).from);
+    assertEquals(0, dijk.getFromEdge(1).getFrom());
+    assertEquals(1, dijk.getFromEdge(2).getFrom());
+    assertEquals(2, dijk.getFromEdge(3).getFrom());
+    assertEquals(3, dijk.getFromEdge(4).getFrom());
   }
 }
