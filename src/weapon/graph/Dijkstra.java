@@ -12,63 +12,97 @@ import java.util.PriorityQueue;
  */
 public class Dijkstra {
 
+  public static class Edge {
+    public final int from;
+    public final int to;
+    public int cost;
+    public int capacity;
+
+    public Edge(int from, int to, int cost, int capacity) {
+      this.from = from;
+      this.to = to;
+      this.cost = cost;
+      this.capacity = capacity;
+    }
+  }
+
   /** Represents the unreachable distance. */
   public final static int INF_DIST = Integer.MAX_VALUE;
 
-  /** Represents a null node */
-  public final static int UNDEFINED = -1;
-
-  public int N;
-  public ArrayList<ArrayList<Edge>> edges;
-  public int[] dist;
-  public int[] prev;
+  private final int N;
+  private ArrayList<ArrayList<Edge>> edges;
+  private int[] cost;
+  private int[] volume;
+  private Edge[] fromEdges;
 
   public Dijkstra(int N) {
     this.N = N;
 
-    this.edges = new ArrayList<ArrayList<Edge>>();
+    this.edges = new ArrayList<ArrayList<Edge>>(N);
     for (int i = 0; i < this.N; i++) {
       this.edges.add(new ArrayList<Edge>());
     }
-    dist = new int[N];
-    prev = new int[N];
+    cost = new int[N];
+    volume = new int[N];
+    fromEdges = new Edge[N];
+  }
+
+  public void addEdge(Edge edge) {
+    this.edges.get(edge.from).add(edge);
   }
 
   public void addEdge(int from, int to, int cost) {
-    this.edges.get(from).add(new Edge(to, cost));
+    addEdge(new Edge(from, to, cost, 1));
   }
 
-  public void solve(int s) {
-    Arrays.fill(dist, INF_DIST);
-    Arrays.fill(prev, UNDEFINED);
+  public void solve(int source) {
+    Arrays.fill(cost, INF_DIST);
+    Arrays.fill(fromEdges, null);
+    Arrays.fill(volume, 0);
 
-    dist[s] = 0;
+    cost[source] = 0;
+    volume[source] = Integer.MAX_VALUE;
     PriorityQueue<Node> pq = new PriorityQueue<Node>(N, comparator);
-    pq.add(new Node(s, 0));
+    pq.add(new Node(source, 0));
 
     while (!pq.isEmpty()) {
       Node node = pq.poll();
-      if (node.dist != dist[node.u]) {
+      if (node.dist != cost[node.u]) {
         continue;
       }
       for (Edge edge : edges.get(node.u)) {
-        int tmp = dist[node.u] + edge.cost;
-        if (tmp < dist[edge.v]) {
-          dist[edge.v] = tmp;
-          prev[edge.v] = node.u;
-          pq.add(new Node(edge.v, tmp));
+        if (edge.capacity > 0) {
+          int tmp = cost[node.u] + edge.cost;
+          if (tmp < cost[edge.to]) {
+            cost[edge.to] = tmp;
+            fromEdges[edge.to] = edge;
+            volume[edge.to] = Math.min(volume[node.u], edge.capacity);
+            pq.add(new Node(edge.to, tmp));
+          }
         }
       }
     }
   }
 
-  class Edge {
-    int v, cost;
+  /**
+   * Gets the cost of the shortest path to the node.
+   */
+  public int getCost(int node) {
+    return this.cost[node];
+  }
 
-    Edge(int to, int cost) {
-      this.v = to;
-      this.cost = cost;
-    }
+  /**
+   * Gets the max flow of the shortest to the node.
+   */
+  public int getVolume(int node) {
+    return this.volume[node];
+  }
+
+  /**
+   * Gets the previous edge in the shortest path.
+   */
+  public Edge getFromEdge(int node) {
+    return this.fromEdges[node];
   }
 
   class Node {
