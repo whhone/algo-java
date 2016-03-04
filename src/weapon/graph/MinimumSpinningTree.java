@@ -11,10 +11,10 @@ import java.util.PriorityQueue;
  */
 public class MinimumSpinningTree {
 
-  public int N;
-  public int minCost;
-  ArrayList<WeightedEdge> edges;
-  ArrayList<WeightedEdge> treeEdges;
+  private int N;
+  private int minCost;
+  private ArrayList<WeightedEdge> edges;
+  private ArrayList<WeightedEdge> treeEdges;
 
   public MinimumSpinningTree(int N) {
     this.N = N;

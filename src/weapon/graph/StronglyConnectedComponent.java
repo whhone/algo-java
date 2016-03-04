@@ -22,9 +22,9 @@ public class StronglyConnectedComponent {
     }
   }
 
-  int N;
-  Node[] nodes;
-  int componentCount;
+  private int N;
+  private Node[] nodes;
+  private int componentCount;
 
   public StronglyConnectedComponent(int N) {
     this.N = N;
