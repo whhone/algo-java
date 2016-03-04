@@ -33,8 +33,8 @@ public class MinCostFlow {
   public void solve(int S, int T) {
     do {
       dijkstra.solve(S);
-      if (dijkstra.getVolume(T) > 0) {
-        int volume = dijkstra.getVolume(T);
+      int volume = dijkstra.getVolume(T);
+      if (volume > 0) {
         this.flow += volume;
         this.cost += volume * dijkstra.getCost(T);
 
