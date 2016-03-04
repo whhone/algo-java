@@ -22,7 +22,7 @@ public class BipartiteMatching {
     Arrays.fill(ansLeft, -1);
     this.ansRight = new int[rightN];
     Arrays.fill(ansRight, -1);
-    this.edges = new ArrayList<LinkedList<Integer>>();
+    this.edges = new ArrayList<LinkedList<Integer>>(this.left);
     for (int i = 0; i < this.left; i++) {
       this.edges.add(new LinkedList<Integer>());
     }

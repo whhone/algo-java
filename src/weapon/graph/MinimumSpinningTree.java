@@ -33,8 +33,8 @@ public class MinimumSpinningTree {
   public MinimumSpinningTree(int N) {
     this.N = N;
     this.minCost = 0;
-    this.edges = new ArrayList<Edge>();
-    this.treeEdges = new ArrayList<Edge>();
+    this.edges = new ArrayList<Edge>(N - 1);
+    this.treeEdges = new ArrayList<Edge>(N - 1);
   }
 
   public void addEdge(int u, int v, int cost) {

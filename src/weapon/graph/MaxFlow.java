@@ -24,7 +24,7 @@ public class MaxFlow {
 
   public MaxFlow(int N) {
     this.N = N;
-    this.edges = new ArrayList<ArrayList<Edge>>();
+    this.edges = new ArrayList<ArrayList<Edge>>(N);
     for (int i = 0; i < this.N; i++) {
       this.edges.add(new ArrayList<Edge>());
     }
