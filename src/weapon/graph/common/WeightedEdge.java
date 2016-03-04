@@ -1,5 +1,8 @@
 package weapon.graph.common;
 
+/**
+ * Represents a weighted edge in a graph. It is sortable by its weight.
+ */
 public class WeightedEdge extends Edge implements Comparable<WeightedEdge>  {
 
   private final int weight;

@@ -1,5 +1,8 @@
 package weapon.graph.common;
 
+/**
+ * Represents an edge in a graph.
+ */
 public class Edge {
 
   private final int from;
