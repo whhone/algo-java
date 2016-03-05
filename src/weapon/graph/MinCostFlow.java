@@ -1,12 +1,21 @@
 package weapon.graph;
 
 import weapon.graph.shortestpath.Dijkstra;
+import weapon.graph.shortestpath.SPFA;
 import weapon.graph.shortestpath.ShortestPath;
 
 /**
  * Min Cost Max Flow. Implementation of Successive Shortest Path Algorithm using Dijkstra.
  */
 public class MinCostFlow {
+
+  public static MinCostFlow byDijkstra(int N) {
+    return new MinCostFlow(new Dijkstra(N));
+  }
+
+  public static MinCostFlow bySPFA(int N) {
+    return new MinCostFlow(new SPFA(N));
+  }
 
   class Edge extends ShortestPath.ShortestPathEdge {
     Edge reverse;
@@ -20,11 +29,11 @@ public class MinCostFlow {
   private int flow;
   private int cost;
 
-  public MinCostFlow(int N) {
+  private MinCostFlow(int N) {
     this.shortestPath = new Dijkstra(N);
   }
 
-  public MinCostFlow(ShortestPath shortestPath) {
+  private MinCostFlow(ShortestPath shortestPath) {
     this.shortestPath = shortestPath;
   }
 

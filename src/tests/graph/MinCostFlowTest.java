@@ -9,7 +9,7 @@ public class MinCostFlowTest {
 
   @Test
   public void test1() {
-    MinCostFlow mcf = new MinCostFlow(10);
+    MinCostFlow mcf = MinCostFlow.byDijkstra(10);
     mcf.addEdge(0, 1, 100, 100);
     mcf.solve(0, 1);
     assertEquals(100, mcf.getMaxFlow());
@@ -18,7 +18,7 @@ public class MinCostFlowTest {
 
   @Test
   public void test2() {
-    MinCostFlow mcf = new MinCostFlow(10);
+    MinCostFlow mcf = MinCostFlow.byDijkstra(10);
     mcf.addEdge(0, 1, 150, 100);
     mcf.addEdge(0, 2, 50, 100);
     mcf.addEdge(1, 3, 150, 100);
