@@ -1,11 +1,14 @@
 package weapon.graph;
 
+import weapon.graph.shortestpath.Dijkstra;
+import weapon.graph.shortestpath.ShortestPath;
+
 /**
  * Min Cost Max Flow. Implementation of Successive Shortest Path Algorithm using Dijkstra.
  */
 public class MinCostFlow {
 
-  class Edge extends Dijkstra.DijkstraEdge {
+  class Edge extends ShortestPath.ShortestPathEdge {
     Edge reverse;
 
     Edge(int from, int to, int cost, int capacity) {
@@ -13,12 +16,16 @@ public class MinCostFlow {
     }
   }
 
-  private Dijkstra dijkstra;
+  private ShortestPath shortestPath;
   private int flow;
   private int cost;
 
   public MinCostFlow(int N) {
-    this.dijkstra = new Dijkstra(N);
+    this.shortestPath = new Dijkstra(N);
+  }
+
+  public MinCostFlow(ShortestPath shortestPath) {
+    this.shortestPath = shortestPath;
   }
 
   public void addEdge(int from, int to, int weight, int cap) {
@@ -26,21 +33,21 @@ public class MinCostFlow {
     Edge et = new Edge(to, from, -weight, 0);
     ef.reverse = et;
     et.reverse = ef;
-    dijkstra.addEdge(ef);
-    dijkstra.addEdge(et);
+    shortestPath.addEdge(ef);
+    shortestPath.addEdge(et);
   }
 
   public void solve(int S, int T) {
     do {
-      dijkstra.solve(S);
-      int volume = dijkstra.getVolume(T);
+      shortestPath.solve(S);
+      int volume = shortestPath.getVolume(T);
       if (volume > 0) {
         this.flow += volume;
-        this.cost += volume * dijkstra.getCost(T);
+        this.cost += volume * shortestPath.getCost(T);
 
         int u = T;
         while (u != S) {
-          Edge edge = (Edge)dijkstra.getFromEdge(u);
+          Edge edge = (Edge) shortestPath.getFromEdge(u);
           Edge reverseEdge = edge.reverse;
           edge.capacity -= volume;
           reverseEdge.capacity += volume;

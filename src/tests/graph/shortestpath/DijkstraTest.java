@@ -1,7 +1,11 @@
-package tests.graph;
+package tests.graph.shortestpath;
 
+import junit.framework.Assert;
 import org.junit.Test;
-import weapon.graph.Dijkstra;
+import weapon.graph.shortestpath.Dijkstra;
+import weapon.graph.shortestpath.ShortestPath;
+
+import java.util.ArrayList;
 
 import static junit.framework.TestCase.assertEquals;
 
@@ -73,5 +77,24 @@ public class DijkstraTest {
     assertEquals(1, dijk.getFromEdge(2).getFrom());
     assertEquals(2, dijk.getFromEdge(3).getFrom());
     assertEquals(3, dijk.getFromEdge(4).getFrom());
+  }
+
+  @Test
+  public void testGetPath() {
+    Dijkstra dijk = new Dijkstra(5);
+    dijk.addEdge(0, 1, 1);
+    dijk.addEdge(1, 2, 2);
+    dijk.addEdge(2, 3, 3);
+    dijk.addEdge(3, 4, 4);
+    dijk.addEdge(4, 2, 5);
+
+    dijk.solve(0);
+
+    ArrayList<ShortestPath.ShortestPathEdge> path = dijk.getPath(4);
+    assertEquals(4, path.size());
+    assertEquals(0, path.get(0).getFrom());
+    assertEquals(1, path.get(1).getFrom());
+    assertEquals(2, path.get(2).getFrom());
+    assertEquals(3, path.get(3).getFrom());
   }
 }
