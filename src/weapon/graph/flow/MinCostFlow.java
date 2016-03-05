@@ -1,4 +1,4 @@
-package weapon.graph;
+package weapon.graph.flow;
 
 import weapon.graph.shortestpath.Dijkstra;
 import weapon.graph.shortestpath.SPFA;

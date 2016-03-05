@@ -1,4 +1,4 @@
-package weapon.graph;
+package weapon.graph.flow;
 
 import weapon.graph.common.Edge;
 

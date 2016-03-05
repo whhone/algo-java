@@ -1,7 +1,7 @@
-package tests.graph;
+package tests.graph.flow;
 
 import org.junit.Test;
-import weapon.graph.MinCostFlow;
+import weapon.graph.flow.MinCostFlow;
 
 import static junit.framework.TestCase.assertEquals;
 

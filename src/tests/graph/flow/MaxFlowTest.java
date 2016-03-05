@@ -1,7 +1,7 @@
-package tests.graph;
+package tests.graph.flow;
 
 import org.junit.Test;
-import weapon.graph.MaxFlow;
+import weapon.graph.flow.MaxFlow;
 
 import static junit.framework.TestCase.assertEquals;
 
