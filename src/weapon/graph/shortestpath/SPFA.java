@@ -28,15 +28,17 @@ public class SPFA extends ShortestPath {
       int u = queue.removeFirst();
       vis[u] = false;
       for (ShortestPath.ShortestPathEdge edge : this.edges.get(u)) {
-        int v = edge.getTo();
-        int tmp = cost[u] + edge.getWeight();
-        if (tmp < cost[v]) {
-          cost[v] = tmp;
-          fromEdges[v] = edge;
-          volume[v] = Math.min(volume[u], edge.capacity);
-          if (!vis[v]) {
-            queue.add(v);
-            vis[v] = true;
+        if (edge.capacity > 0) {
+          int v = edge.getTo();
+          int tmp = cost[u] + edge.getWeight();
+          if (tmp < cost[v]) {
+            if (!vis[v]) {
+              queue.add(v);
+              vis[v] = true;
+            }
+            cost[v] = tmp;
+            fromEdges[v] = edge;
+            volume[v] = Math.min(volume[u], edge.capacity);
           }
         }
       }

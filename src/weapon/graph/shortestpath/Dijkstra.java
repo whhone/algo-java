@@ -35,11 +35,12 @@ public class Dijkstra extends ShortestPath {
       }
       for (ShortestPath.ShortestPathEdge edge : edges.get(node.u)) {
         if (edge.capacity > 0) {
-          int tmp = cost[node.u] + edge.getWeight();
-          if (tmp < cost[edge.getTo()]) {
-            cost[edge.getTo()] = tmp;
-            fromEdges[edge.getTo()] = edge;
-            volume[edge.getTo()] = Math.min(volume[node.u], edge.capacity);
+          int u = edge.getFrom(), v = edge.getTo();
+          int tmp = cost[u] + edge.getWeight();
+          if (tmp < cost[v]) {
+            cost[v] = tmp;
+            fromEdges[v] = edge;
+            volume[v] = Math.min(volume[u], edge.capacity);
             pq.add(new Node(edge.getTo(), tmp));
           }
         }
