@@ -29,10 +29,6 @@ public class MinCostFlow {
   private int flow;
   private int cost;
 
-  private MinCostFlow(int N) {
-    this.shortestPath = new Dijkstra(N);
-  }
-
   private MinCostFlow(ShortestPath shortestPath) {
     this.shortestPath = shortestPath;
   }
