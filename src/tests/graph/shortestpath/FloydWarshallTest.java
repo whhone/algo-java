@@ -1,6 +1,5 @@
 package tests.graph.shortestpath;
 
-import junit.framework.Assert;
 import org.junit.Test;
 import weapon.graph.shortestpath.FloydWarshall;
 
