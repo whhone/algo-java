@@ -24,11 +24,19 @@ public class BinaryIndexedTree2D {
     }
   }
 
-  public int querySum(int xMin, int yMin, int xMax, int yMax) {
+  public void setValue(int x, int y, int value) {
+    addValue(x, y, value - querySum(x, y, x, y));
+  }
+
+  public int querySum(int x1, int y1, int x2, int y2) {
+    int xMax = Math.max(x1, x2);
+    int xMin = Math.min(x1, x2);
+    int yMax = Math.max(y1, y2);
+    int yMin = Math.min(y1, y2);
     return sum(xMax, yMax) + sum(xMin - 1, yMin - 1) - sum(xMax, yMin - 1) - sum(xMin - 1, yMax);
   }
 
-  public int sum(int x, int y) {
+  private int sum(int x, int y) {
     int sum = 0;
     for (int i = x; i > 0; i -= i & -i) {
       for (int j = y; j > 0; j -= j & -j) {
