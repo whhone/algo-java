@@ -1,0 +1,2 @@
+# Converts Array to List
+Arrays.asList("QWERTYUIOPASDFGHJKLZXCVBNM".split(""))
