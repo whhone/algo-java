@@ -1,0 +1,36 @@
+7 POJ3468
+6 SINGLE
+8 STANDARD
+9 input.txt
+8 STANDARD
+10 output.txt
+1
+0
+59 10 5
+1 2 3 4 5 6 7 8 9 10
+Q 4 4
+Q 1 10
+Q 2 4
+C 3 6 3
+Q 2 4
+
+10 4
+55
+9
+15
+
+1
+13 src/workspace
+16 -Xmx256m -Xss64m
+4 Main
+17 workspace.POJ3468
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2016.03.25
+0 
+1
+21 weapon.io.InputReader
+22 weapon.io.OutputWriter
+0
+0
