@@ -21,21 +21,24 @@ public class Primes {
     return primes;
   }
 
+  /**
+   * Returns the smallest prime divisor of n for n >= 2.
+   */
   public static long smallestPrimeDivisor(long n) {
-    for (long i = 2; i * i <= n; i++) {
+    long squareRoot = (long) Math.sqrt(n + 0.5);
+    for (long i = 2; i <= squareRoot; i++) {
       if (n % i == 0) {
         return i;
       }
     }
     return n;
   }
-
+  
   public static boolean isPrime(long n) {
     if (n <= 1) {
       return false;
     } else {
-      long d = smallestPrimeDivisor(n);
-      return d == n;
+      return n == smallestPrimeDivisor(n);
     }
   }
 }
