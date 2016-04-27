@@ -39,7 +39,7 @@ public class BipartiteMatching {
   }
 
   public void solve() {
-    boolean[] visited = new boolean[left];
+    boolean[] visited = new boolean[right];
     ansCount = 0;
     for (int i = 0; i < left; ++i) {
       Arrays.fill(visited, false);

@@ -33,7 +33,7 @@ public class Primes {
     }
     return n;
   }
-  
+
   public static boolean isPrime(long n) {
     if (n <= 1) {
       return false;
