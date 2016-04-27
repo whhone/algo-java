@@ -63,6 +63,8 @@ public class BipartiteMatchingTest {
     matching.connect(3, 0);
 
     matching.solve();
+
+    assertEquals(1, matching.ansCount);
   }
 
 }
