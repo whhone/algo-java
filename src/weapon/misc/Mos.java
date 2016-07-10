@@ -22,11 +22,11 @@ public abstract class Mos {
 
   final protected static Comparator<Query> CmpB = new Comparator<Query>() {
     public int compare(Query a, Query b) {
-      if (a.b != b.b) {
-        return a.b - b.b;
-      } else {
-        return a.r - b.r;
-      }
+    if (a.b != b.b) {
+      return a.b - b.b;
+    } else {
+      return a.r - b.r;
+    }
     }
   };
 
