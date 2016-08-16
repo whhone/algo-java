@@ -1,7 +1,7 @@
 package weapon.datastructures;
 
 /**
- * For problem like CF - 706D.
+ * For problem like <a href="http://codeforces.com/problemset/problem/706/D">CF - 706D</>.
  */
 public class MaxXorTree {
 
