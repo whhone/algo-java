@@ -5,6 +5,7 @@ import java.util.Collections;
 
 public class ChineseRemainderTheorem {
 
+  // Assume gcd(m1, m2) = 1
   private static long solveCoPrime2(long r1, long m1, long r2, long m2) {
     long mod = m1 * m2;
     EGCD egcd = new EGCD(m1, m2);
@@ -100,8 +101,6 @@ public class ChineseRemainderTheorem {
         --count;
         rr[count] = rmds.get(i);
         mm[count] = powers.get(i);
-
-        // System.out.printf("%d %d\n", rr[count], mm[count]);
       }
     }
 
