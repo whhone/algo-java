@@ -28,22 +28,27 @@ public class ChineseRemainderTheorem {
   // Assume gcd(mi, mj) = 1
   public static long solveCoPrime(long[] r, long[] m) {
     int N = m.length;
-    for (int i = 1; i < N; i++) {
-      long t = solveCoPrime2(r[0], m[0], r[i], m[i]);
-      r[0] = t;
-      m[0] *= m[i];
+    long mod = 1;
+    for (int i = 0; i < N; i++) {
+      mod *= m[i];
     }
-    return r[0];
+    long ans = 0;
+    for (int i = 0; i < N; i++) {
+      EGCD egcd = new EGCD(mod / m[i], m[i]);
+      long t = (mod / m[i] * egcd.getX()) % mod;
+      ans = (ans + (t * r[i]) % mod) % mod;
+    }
+
+    if (ans < 0) {
+      ans = mod - (-ans % mod);
+    }
+
+    return ans;
   }
 
   // Allow any modular. Returns -1 if there is no solutions.
   public static long solveMightNotCoPrime(long[] r, long[] m) {
     int N = m.length;
-
-    if (N == 1) {
-      return r[0];
-    }
-
     long maxM = m[0];
     for (int i = 1; i < N; i++) {
       maxM = Math.max(maxM, m[i]);
