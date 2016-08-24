@@ -54,7 +54,7 @@ public class ChineseRemainderTheorem {
       maxM = Math.max(maxM, m[i]);
     }
 
-    ArrayList<Long> primes = Primes.getPrimes((long) (Math.sqrt(maxM * 1.0) + 1.5));
+    ArrayList<Long> primes = Primes.getPrimesLessThanOrEqual((long) (Math.sqrt(maxM * 1.0) + 1.5));
     ArrayList<Long> powers = new ArrayList<Long>(Collections.nCopies(primes.size(), 0L));
     ArrayList<Long> rmds = new ArrayList<Long>(Collections.nCopies(primes.size(), 0L));
 

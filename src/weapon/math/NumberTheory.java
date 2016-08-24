@@ -14,7 +14,7 @@ public class NumberTheory {
 
   public static long eulerTotient(long n) {
     long ans = n;
-    ArrayList<Long> primes = Primes.getPrimes((int) Math.sqrt(n) + 1);
+    ArrayList<Long> primes = Primes.getPrimesLessThanOrEqual((int) Math.sqrt(n) + 1);
     for (long p : primes) {
       if (n % p == 0) {
         ans -= ans / p;

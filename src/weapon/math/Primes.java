@@ -7,7 +7,7 @@ public class Primes {
   /**
    * Returns all primes less then or equal to n.
    */
-  public static ArrayList<Long> getPrimes(long n) {
+  public static ArrayList<Long> getPrimesLessThanOrEqual(long n) {
     boolean[] visited = new boolean[(int)n + 1];
     ArrayList<Long> primes = new ArrayList<Long>();
     for (int i = 2; i <= n; ++i) {
