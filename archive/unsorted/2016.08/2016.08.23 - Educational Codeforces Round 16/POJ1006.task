@@ -1,0 +1,37 @@
+7 POJ1006
+6 SINGLE
+8 STANDARD
+9 input.txt
+8 STANDARD
+10 output.txt
+1
+0
+80 0 0 0 0
+0 0 0 100
+5 20 34 325
+4 5 6 7
+283 102 23 320
+203 301 203 40
+-1 -1 -1 -1
+
+304 Case 1: the next triple peak occurs in 21252 days.
+Case 2: the next triple peak occurs in 21152 days.
+Case 3: the next triple peak occurs in 19575 days.
+Case 4: the next triple peak occurs in 16994 days.
+Case 5: the next triple peak occurs in 8910 days.
+Case 6: the next triple peak occurs in 10789 days.
+1
+13 src/workspace
+8 -Xmx256M
+4 Main
+17 workspace.POJ1006
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2016.08.23
+31 Educational Codeforces Round 16
+1
+21 weapon.io.InputReader
+22 weapon.io.OutputWriter
+0
+0
