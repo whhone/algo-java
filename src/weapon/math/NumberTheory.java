@@ -7,7 +7,7 @@ import java.util.ArrayList;
  *
  * Number Theory ~
  */
-public class NumberTheory {
+public final class NumberTheory {
   public static long gcd(long a, long b) {
     return (a > 0) ? gcd(b % a, a) : b;
   }

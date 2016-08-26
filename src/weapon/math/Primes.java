@@ -2,7 +2,7 @@ package weapon.math;
 
 import java.util.ArrayList;
 
-public class Primes {
+public final class Primes {
 
   /**
    * Returns all primes less then or equal to n.

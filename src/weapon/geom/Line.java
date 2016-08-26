@@ -7,7 +7,7 @@ import com.sun.istack.internal.Nullable;
  *
  * If a is zero, the line is horizontal. If b is zero, the line is vertical.
  */
-public class Line {
+public final class Line {
 
   public double a, b, c;
 

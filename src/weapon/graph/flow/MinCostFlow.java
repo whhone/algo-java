@@ -7,7 +7,7 @@ import weapon.graph.shortestpath.ShortestPath;
 /**
  * Min Cost Max Flow. Implementation of Successive Shortest Path Algorithm using Dijkstra.
  */
-public class MinCostFlow {
+public final class MinCostFlow {
 
   public static MinCostFlow byDijkstra(int N) {
     return new MinCostFlow(new Dijkstra(N));

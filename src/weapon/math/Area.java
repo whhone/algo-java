@@ -3,7 +3,7 @@ package weapon.math;
 /**
  * A collection of area formula.
  */
-public class Area {
+public final class Area {
 
   /**
    * Calculates the area of a regular polygon.

@@ -7,7 +7,7 @@ import java.util.LinkedList;
 /**
  * Solves bipartite matching.
  */
-public class BipartiteMatching {
+public final class BipartiteMatching {
 
   public int left;
   public int right;

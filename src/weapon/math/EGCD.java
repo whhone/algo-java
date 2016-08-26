@@ -5,7 +5,7 @@ package weapon.math;
  *
  * Notes that there could be multiple solution for (x, y). EGCD will returns any one of it.
  */
-public class EGCD {
+public final class EGCD {
 
   final private long a, b, x, y, gcd;
 

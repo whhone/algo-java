@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
 /**
  * A faster input reader.
  */
-public class InputReader {
+public final class InputReader {
   public BufferedReader reader;
   public StringTokenizer tokenizer;
   public String cache;

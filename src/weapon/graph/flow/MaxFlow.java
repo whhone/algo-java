@@ -9,7 +9,7 @@ import java.util.LinkedList;
 /**
  * Dinic's algorithm for max flow. O(V * V * E).
  */
-public class MaxFlow {
+public final class MaxFlow {
   class MaxFlowEdge extends Edge {
     public int cap;
     public MaxFlowEdge reverse;

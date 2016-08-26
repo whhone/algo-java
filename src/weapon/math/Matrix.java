@@ -3,7 +3,7 @@ package weapon.math;
 /**
  * Represents a Matrix. All values take mod MOD.
  */
-public class Matrix {
+public final class Matrix {
 
   public static long MOD = Integer.MAX_VALUE;
   public static void setMod(long newMod) {

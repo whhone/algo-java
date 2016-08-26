@@ -1,6 +1,6 @@
 package weapon.geom;
 
-public class Point {
+public final class Point {
   public static Point ORIGIN = new Point(0, 0);
 
   public final double x;

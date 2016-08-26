@@ -2,7 +2,7 @@ package weapon.math;
 
 import java.math.BigInteger;
 
-public class Combinatorics {
+public final class Combinatorics {
 
   /**
    * Computes nCr.

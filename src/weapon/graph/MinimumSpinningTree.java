@@ -9,7 +9,7 @@ import java.util.PriorityQueue;
 /**
  * Minimum Spinning Tree by Kruskal's Algorithm.
  */
-public class MinimumSpinningTree {
+public final class MinimumSpinningTree {
 
   private int N;
   private int minCost;

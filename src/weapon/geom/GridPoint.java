@@ -5,7 +5,7 @@ import java.util.Comparator;
 /**
  * A point where x and y are integer.
  */
-public class GridPoint implements Comparable<GridPoint> {
+public final class GridPoint implements Comparable<GridPoint> {
 
   public long x, y;
   public int index = 0;

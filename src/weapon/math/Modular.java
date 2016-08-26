@@ -6,7 +6,7 @@ package weapon.math;
  *
  * Modular.on(MOD).power(a, b);
  */
-public class Modular {
+public final class Modular {
 
   public static Modular on(long mod) {
     return new Modular(mod);

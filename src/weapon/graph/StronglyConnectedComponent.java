@@ -8,7 +8,7 @@ import java.util.Arrays;
  *
  * Complexity: O(|V| + |E|)
  */
-public class StronglyConnectedComponent {
+public final class StronglyConnectedComponent {
 
   class Node {
     int index, component;

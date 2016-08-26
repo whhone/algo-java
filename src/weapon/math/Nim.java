@@ -3,7 +3,7 @@ package weapon.math;
 /**
  * Nim. Grundy Number. Sprague-Grundy theorem.
  */
-public class Nim {
+public final class Nim {
 
   public static int getGrundyNumber(int[] reachableValues) {
     boolean[] b = new boolean[reachableValues.length];

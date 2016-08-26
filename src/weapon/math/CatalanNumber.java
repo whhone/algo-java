@@ -8,7 +8,7 @@ import java.util.Collections;
  * The Catalan numbers are a set of numbers that arise in tree enumeration problems of the type.
  * See http://mathworld.wolfram.com/CatalanNumber.html
  */
-public class CatalanNumber {
+public final class CatalanNumber {
 
   private static ArrayList<BigInteger> cache =
       new ArrayList<BigInteger>(Collections.singletonList(BigInteger.ONE));

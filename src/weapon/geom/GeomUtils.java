@@ -1,6 +1,6 @@
 package weapon.geom;
 
-public class GeomUtils {
+public final class GeomUtils {
 
   /**
    * Dot product of OA and OB.. Returns (2 * Area of triangle ABC).

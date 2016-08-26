@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * A circle in the form of (x - center.x) ^ 2 + (y - center.y) ^ 2 = r ^ 2.
  */
-public class Circle {
+public final class Circle {
 
   public final Point center;
   public final double radius;

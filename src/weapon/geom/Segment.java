@@ -5,7 +5,7 @@ import com.sun.istack.internal.Nullable;
 /**
  * Represents a segment, a vector.
  */
-public class Segment {
+public final class Segment {
 
   public final Point from, to;
 

@@ -1,6 +1,6 @@
 package weapon.geom;
 
-public class FloatCompare {
+public final class FloatCompare {
 
   static double epsilon = 1e-8;
 
