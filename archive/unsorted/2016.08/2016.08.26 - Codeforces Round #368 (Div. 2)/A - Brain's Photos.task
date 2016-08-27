@@ -1,0 +1,42 @@
+18 A - Brain's Photos
+6 SINGLE
+8 STANDARD
+9 input.txt
+8 STANDARD
+10 output.txt
+3
+0
+12 2 2
+C M
+Y Y
+
+6 #Color
+1
+1
+16 3 2
+W W
+W W
+B B
+
+12 #Black&White
+1
+2
+6 1 1
+W
+
+12 #Black&White
+1
+13 src/workspace
+8 -Xmx256M
+4 Main
+15 workspace.TaskA
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2016.08.26
+30 Codeforces Round #368 (Div. 2)
+1
+21 weapon.io.InputReader
+22 weapon.io.OutputWriter
+0
+0
