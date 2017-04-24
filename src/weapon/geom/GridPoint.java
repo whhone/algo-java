@@ -49,6 +49,10 @@ public final class GridPoint implements Comparable<GridPoint> {
     return new GridPoint(origin.x - origin.y + y, origin.y - x + origin.x);
   }
 
+  public GridPoint rotate90CounterClockwise(GridPoint origin) {
+    return new GridPoint(-(y - origin.y) + origin.x, (x - origin.x) + origin.y);
+  }
+
   public static boolean isCollinear(GridPoint a, GridPoint b, GridPoint c) {
     return (c.y - a.y) * (b.x - a.x) == (b.y - a.y) * (c.x - a.x);
   }
