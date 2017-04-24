@@ -7,12 +7,26 @@ import java.util.Comparator;
  */
 public final class GridPoint implements Comparable<GridPoint> {
 
+  public static final GridPoint ORIGIN = new GridPoint(0, 0);
   public long x, y;
   public int index = 0;
 
   public GridPoint(long x, long y) {
     this.x = x;
     this.y = y;
+  }
+
+  @Override
+  public String toString() {
+    return String.format("%d %d", x, y);
+  }
+
+  @Override
+  public boolean equals(Object other) {
+    if (other == null) return false;
+    if (!(other instanceof GridPoint)) return false;
+    GridPoint otherPoint = (GridPoint)other;
+    return (otherPoint.x == x && otherPoint.y == y);
   }
 
   public double dist(GridPoint gridPoint) {
@@ -29,6 +43,10 @@ public final class GridPoint implements Comparable<GridPoint> {
 
   public long dist2(long x, long y) {
     return (this.x - x) * (this.x - x) + (this.y - y) * (this.y - y);
+  }
+
+  public GridPoint rotate90Clockwise(GridPoint origin) {
+    return new GridPoint(origin.x - origin.y + y, origin.y - x + origin.x);
   }
 
   public static boolean isCollinear(GridPoint a, GridPoint b, GridPoint c) {

@@ -1,9 +1,11 @@
 .DS_store
 *.swp
+.idea
+
+algo-java.iml
+CHelperReport.txt
 out
 output
-CHelperReport.txt
 src/workspace
-.idea/*
 
 /archive
