@@ -4,14 +4,14 @@ ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "${ROOT_DIR}"
 cd ../output
 
-echo "${ROOT_DIR}"
-
-echo "Running javac Main.java"
+echo "Running javac Main.java" >> /dev/stderr
 javac Main.java
 
 if [[ $? != 0 ]]; then
-    echo "Failed to build."
+    echo "Failed to build." >> /dev/stderr
 else
-    java Main
+    echo "Running time java Main" >> /dev/stderr
+    echo "----------------------" >> /dev/stderr
+    time java Main
 fi
 
