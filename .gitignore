@@ -2,7 +2,7 @@
 *.swp
 .idea
 
-algo-java.iml
+/*.iml
 CHelperReport.txt
 out
 output
