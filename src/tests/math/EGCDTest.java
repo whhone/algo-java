@@ -3,8 +3,8 @@ package tests.math;
 import org.junit.Test;
 import weapon.math.EGCD;
 
-import static junit.framework.Assert.assertTrue;
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 public class EGCDTest {
 
